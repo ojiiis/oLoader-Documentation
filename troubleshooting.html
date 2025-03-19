@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oLoader - Troubleshooting</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <h1>oLoader - Troubleshooting</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./usage.html">Usage</a></li>
+                <li><a href="./api.html">API Reference</a></li>
+                <li><a href="./examples.html">Examples</a></li>
+                <li><a href="./troubleshooting.html">Troubleshooting</a></li>
+            </ul>
+        </nav>
+        <i class="menu-toggle fa fa-bars"></i>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Common Issues and Fixes</h2>
+            
+            <h3>1. Content Not Loading</h3>
+            <p><strong>Problem:</strong> The page does not display the loaded content.</p>
+            <p><strong>Solution:</strong> Ensure the file path is correct and accessible.</p>
+            <pre><code>const app = oLoader();
+app.body("./content.html", "b");
+app.load();</code></pre>
+
+            <h3>2. JavaScript Not Executing</h3>
+            <p><strong>Problem:</strong> Scripts loaded using <code>app.script()</code> do not execute.</p>
+            <p><strong>Solution:</strong> Ensure the script is properly linked and set to execute.</p>
+            <pre><code>const app = oLoader();
+app.script("./script.js", "body");
+app.load();</code></pre>
+
+            <h3>3. Fetching External Files Fails</h3>
+            <p><strong>Problem:</strong> External resources (HTML, CSS, JS) fail to load.</p>
+            <p><strong>Solution:</strong> Check network errors and ensure CORS policies allow fetching the files.</p>
+
+            <h3>4. Callback Not Triggering</h3>
+            <p><strong>Problem:</strong> The callback function in <code>app.load()</code> is not executing.</p>
+            <p><strong>Solution:</strong> Ensure the function is passed correctly.</p>
+            <pre><code>const app = oLoader();
+app.body("./content.html", "e");
+app.load(() => console.log("Content loaded successfully!"));</code></pre>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 oLoader Project</p>
+        <a href="./index.html">Back to Home</a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

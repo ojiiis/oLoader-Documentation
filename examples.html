@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oLoader - Examples</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <h1>oLoader - Examples</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./usage.html">Usage</a></li>
+                <li><a href="./api.html">API Reference</a></li>
+                <li><a href="./examples.html">Examples</a></li>
+                <li><a href="./troubleshooting.html">Troubleshooting</a></li>
+            </ul>
+        </nav>
+        <i class="menu-toggle fa fa-bars"></i>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Basic Content Loading</h2>
+            <p>Load an HTML file dynamically into the body:</p>
+            <pre><code>const app = oLoader();
+app.body("./content.html", "b");
+app.load();</code></pre>
+
+            <h2>Loading a CSS File</h2>
+            <p>Load a CSS file into the head:</p>
+            <pre><code>const app = oLoader();
+app.head("./styles.css");
+app.load();</code></pre>
+
+            <h2>Loading a JavaScript File</h2>
+            <p>Load a JavaScript file dynamically:</p>
+            <pre><code>const app = oLoader();
+app.script("./script.js", "head");
+app.load();</code></pre>
+
+            <h2>Using beforeLoad</h2>
+            <p>Execute a function before loading content:</p>
+            <pre><code>const app = oLoader();
+app.beforeLoad(() => console.log("Preparing to load content..."));
+app.body("./content.html", "e");
+app.load();</code></pre>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 oLoader Project</p>
+        <a href="./troubleshooting.html">Next: Troubleshooting</a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

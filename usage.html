@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oLoader - Usage Guide</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <h1>oLoader - Usage Guide</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./usage.html">Usage</a></li>
+                <li><a href="./api.html">API Reference</a></li>
+                <li><a href="./examples.html">Examples</a></li>
+                <li><a href="./troubleshooting.html">Troubleshooting</a></li>
+            </ul>
+        </nav>
+        <i class="menu-toggle fa fa-bars"></i>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Getting Started</h2>
+            <p>To use oLoader, include the script in your project:</p>
+            <pre><code>&lt;script src="./oloader.js"&gt;&lt;/script&gt;</code></pre>
+        </section>
+
+        <section>
+            <h2>Basic Usage</h2>
+            <p>Initialize oLoader and load content dynamically:</p>
+            <pre><code>const loader = oLoader();
+loader.body('./content.html').load();</code></pre>
+            <p>Another way to load content conditionally:</p>
+            <pre><code>const app = oLoader();
+app.body('index.html', 'b');
+if (true) {
+    console.log("Condition met, content will load");
+    app.load();
+}</code></pre>
+        </section>
+
+        <section>
+            <h2>Using beforeLoad</h2>
+            <p>The <code>beforeLoad</code> method allows you to execute code before content is loaded.</p>
+            <pre><code>loader.beforeLoad(() => {
+    console.log("Loading content...");
+}).body('./content.html').load();</code></pre>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 oLoader Project</p>
+        <a href="./api.html">Next: API Reference</a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

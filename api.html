@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oLoader - API Reference</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <h1>oLoader - API Reference</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./usage.html">Usage</a></li>
+                <li><a href="./api.html">API Reference</a></li>
+                <li><a href="./examples.html">Examples</a></li>
+                <li><a href="./troubleshooting.html">Troubleshooting</a></li>
+            </ul>
+        </nav>
+        <i class="menu-toggle fa fa-bars"></i>
+    </header>
+    
+    <main>
+        <section>
+            <h2>API Methods</h2>
+            <h3>1. <code>oLoader()</code></h3>
+            <p>Creates an instance of oLoader.</p>
+            <pre><code>const app = oLoader();</code></pre>
+
+            <h3>2. <code>body(file, option)</code></h3>
+            <p>Loads an HTML file into the body. The <code>option</code> parameter can be <code>e</code> (end) or <code>b</code> (beginning).</p>
+            <pre><code>app.body('index.html', 'b');</code></pre>
+
+            <h3>3. <code>head(file, option)</code></h3>
+            <p>Loads content into the head section.</p>
+            <pre><code>app.head('header.html', 'e');</code></pre>
+
+            <h3>4. <code>script(file, target)</code></h3>
+            <p>Loads a script dynamically. The <code>target</code> can be <code>head</code> or <code>body</code>.</p>
+            <pre><code>app.script('./script.js', 'body');</code></pre>
+
+            <h3>5. <code>beforeLoad(callback)</code></h3>
+            <p>Executes a function before loading content.</p>
+            <pre><code>app.beforeLoad(() => console.log("Loading..."));</code></pre>
+
+            <h3>6. <code>load(callback)</code></h3>
+            <p>Executes the loading process.</p>
+            <pre><code>app.load(() => console.log("Content Loaded"));</code></pre>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 oLoader Project</p>
+        <a href="./examples.html">Next: Examples</a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
